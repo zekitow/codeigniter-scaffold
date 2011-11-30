@@ -13,7 +13,10 @@ class <%=@model.capitalize%> extends CI_Controller {
 	}
 
 	function save() {
-		$this-><%=@model.downcase%>_model->save($data)
+		$data[] = array();	
+		<% @fields.each { |f| %>
+		array_push($data,$this->input->xss_clean($this->input->post('<%= f %>')));<% } %>
+		$this-><%=@model.downcase%>_model->save($data);
 		$this->load->view('<%=@model.downcase%>/index', $data);
 	}
 }
