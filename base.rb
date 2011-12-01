@@ -14,4 +14,10 @@ class Base
 			file.close
 	end
 
+	def write_file(path, content)
+		file = File.new(path,"w")
+		file.write(contet)
+		file.close
+	end
+
 end
