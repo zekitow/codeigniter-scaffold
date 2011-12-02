@@ -47,4 +47,5 @@ class Generate < Thor
 
 end
 
+# starts the thor job
 Generate.start
