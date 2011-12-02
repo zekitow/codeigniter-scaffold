@@ -2,9 +2,7 @@
 
 require 'rubygems'
 require 'thor'
-require 'controller'
-require 'model'
-require 'migration'
+require 'erb'
 
 class Generate < Thor
 
@@ -12,10 +10,40 @@ class Generate < Thor
 
   desc      "scaffold", "scaffold *some-model*"
   def scaffold(model, *fields)
-		Controller.new(model, fields).create
-		Model.new(model,fields).create
-		Migration.new(model,fields).create
+
+		@model = model
+		@fields = fields
+
+		create "templates/controller.php","ci/controllers/#{@model.downcase}.php"
+		create "templates/model.php","ci/models/#{@model.downcase}_model.php"
+		create "templates/migration.sql","ci/migrations/create_#{@model.downcase}.sql"
+
 	end
+
+	no_tasks {	
+		def create(template, output)
+			read(template)
+			parse_to(output)
+			puts "File #{output} was successfully created."
+		end
+
+		def read(template)
+			@template = File.read(template)
+		end
+
+		def parse_to(path)
+				template = ERB.new(@template)
+				file = File.new(path,"w")
+				file.write(template.result(binding))
+				file.close
+		end
+
+		def write_file(path, content)
+			file = File.new(path,"w")
+			file.write(contet)
+			file.close
+		end
+	}
 
 end
 
