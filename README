@@ -1,0 +1,32 @@
+codeigniter-scaffold
+
+	Generates simple cruds for codeiginiter 2.
+
+	1. Usage:
+
+		./generate.rb scaffold <model> <field_1> <field_2> <field_3> ...
+
+		<model> is the table/model name for database
+		<field_*> the fields for the table
+	
+	2. It will create some files at:
+
+		* application/controller/<model>.php
+		* application/migrations/create_<model>.php
+		* application/models/<model>_model.php
+		* application/views/<model>/create.php
+		* appplication/views/<model>/index.php
+
+	3. Add to codeiginiter:
+
+		a. Executes the migration at your database by:
+			 mysql -uroot -p <database_name> < create_<model>.sql
+
+		b. copy/paste 'application' folder at your 'application' folder of codeginiter
+
+		c. access the url of your generated crud:
+				127.0.0.1/project_name/index.php/<model>/
+
+	4. Have fun!
+
+	

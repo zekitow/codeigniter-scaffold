@@ -1,5 +1,5 @@
 
-create table post (
+create table posts (
 	id int not null auto_increment, 
 	primary key(id),
 	title VARCHAR(255), 

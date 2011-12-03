@@ -14,12 +14,12 @@ class Generate < Thor
 		@model = model
 		@fields = fields
 
-		create "templates/controller.php","ci/controllers/#{@model.downcase}.php"
-		create "templates/model.php","ci/models/#{@model.downcase}_model.php"
-		create "templates/migration.sql","ci/migrations/create_#{@model.downcase}.sql"
-		mkdir("ci/views/#{@model.downcase}")
-		create "templates/view_create.php","ci/views/#{@model.downcase}/create.php"
-		create "templates/view_index.php","ci/views/#{@model.downcase}/index.php"
+		create "templates/controller.php","application/controllers/#{@model.downcase}.php"
+		create "templates/model.php","application/models/#{@model.downcase}_model.php"
+		create "templates/migration.sql","application/migrations/create_#{@model.downcase}.sql"
+		mkdir("application/views/#{@model.downcase}")
+		create "templates/view_create.php","application/views/#{@model.downcase}/create.php"
+		create "templates/view_index.php","application/views/#{@model.downcase}/index.php"
 	end
 
 	no_tasks {	
@@ -38,12 +38,6 @@ class Generate < Thor
 				file = File.new(path,"w")
 				file.write(template.result(binding))
 				file.close
-		end
-
-		def write_file(path, content)
-			file = File.new(path,"w")
-			file.write(contet)
-			file.close
 		end
 
 		def mkdir(directory_name)
