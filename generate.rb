@@ -17,7 +17,9 @@ class Generate < Thor
 		create "templates/controller.php","ci/controllers/#{@model.downcase}.php"
 		create "templates/model.php","ci/models/#{@model.downcase}_model.php"
 		create "templates/migration.sql","ci/migrations/create_#{@model.downcase}.sql"
-
+		mkdir("ci/views/#{@model.downcase}")
+		create "templates/view_create.php","ci/views/#{@model.downcase}/create.php"
+		create "templates/view_index.php","ci/views/#{@model.downcase}/index.php"
 	end
 
 	no_tasks {	
@@ -42,6 +44,14 @@ class Generate < Thor
 			file = File.new(path,"w")
 			file.write(contet)
 			file.close
+		end
+
+		def mkdir(directory_name)
+			begin
+				Dir::mkdir(directory_name)
+			rescue
+				# directory exists	
+			end
 		end
 	}
 
