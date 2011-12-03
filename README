@@ -29,4 +29,7 @@ codeigniter-scaffold
 
 	4. Have fun!
 
-	
+	Notes:
+		* Every scaffold will create 'id', 'created_at', 'updated_at' columns;
+		* Id is an auto_increment field;
+		* You can see an scaffold example at 'application' folder of this repo.
