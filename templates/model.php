@@ -7,9 +7,11 @@ class <%=@model.capitalize%>_model extends CI_Model {
 		$this->db->set('<%= f %>', $data['<%= f %>']);<% } %>
 
 		if($data['id'] == NULL) {
+			$this->db->set('created_at', date('Y-m-d h:i:s',time()));
 			$this->db->insert('<%=@model.downcase%>');
 		} else {
 			$this->db->where('id', $data['id']);
+			$this->db->set('updated_at', date('Y-m-d h:i:s',time()));
 			$this->db->update('<%=@model.downcase%>');
 		}
 

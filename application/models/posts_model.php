@@ -8,9 +8,11 @@ class Posts_model extends CI_Model {
 		$this->db->set('body', $data['body']);
 
 		if($data['id'] == NULL) {
+			$this->db->set('created_at', date('Y-m-d h:i:s',time()));
 			$this->db->insert('posts');
 		} else {
 			$this->db->where('id', $data['id']);
+			$this->db->set('updated_at', date('Y-m-d h:i:s',time()));
 			$this->db->update('posts');
 		}
 

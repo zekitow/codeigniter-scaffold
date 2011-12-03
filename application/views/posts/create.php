@@ -1,6 +1,6 @@
 	<h1>Create</h1>
 	<?php echo form_open('posts/save'); ?>
-		<input type="hidden" name="id" value="<?php echo isset($id)?$posts->id:''?>"/>
+		<input type="hidden" name="id" value="<?php echo isset($posts)?$posts->id:''?>"/>
 		
 		<p>
 			<label for="title">title:</label><br/>

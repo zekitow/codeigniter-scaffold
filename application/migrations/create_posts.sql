@@ -4,5 +4,7 @@ create table posts (
 	primary key(id),
 	title VARCHAR(255), 
 	body VARCHAR(255), 
+	created_at datetime,
+	updated_at datetime
 );
 
