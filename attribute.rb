@@ -19,4 +19,8 @@ class Attribute
     end
   end
 
+	def self.parse(f)
+		Attribute.new(f.split(":")[0], f.split(":")[1])
+	end
+
 end

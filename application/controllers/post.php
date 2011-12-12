@@ -22,8 +22,8 @@ class Post extends CI_Controller {
 		$data[] = array();
 		$data['id'] = $this->input->post('id', TRUE);
 		
-		$data['nome'] = $this->input->post('nome', TRUE);
-		$data['sobrenome'] = $this->input->post('sobrenome', TRUE);
+		$data['title'] = $this->input->post('title', TRUE);
+		$data['body'] = $this->input->post('body', TRUE);
 		$this->post_model->save($data);
 		redirect('/post/index', 'refresh');
 	}

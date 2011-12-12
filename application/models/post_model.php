@@ -4,8 +4,8 @@ class Post_model extends CI_Model {
 
 	function save($data) {
 		
-		$this->db->set('nome', $data['nome']);
-		$this->db->set('sobrenome', $data['sobrenome']);
+		$this->db->set('title', $data['title']);
+		$this->db->set('body', $data['body']);
 
 		if($data['id'] == NULL) {
 			$this->db->set('created_at', date('Y-m-d h:i:s',time()));
