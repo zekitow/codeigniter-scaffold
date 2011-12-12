@@ -1,10 +1,10 @@
 	<h1>Create</h1>
 	<?php echo form_open('<%=@model.downcase%>/save'); ?>
 		<input type="hidden" name="id" value="<?php echo isset($<%=@model.downcase%>)?$<%=@model.downcase%>->id:''?>"/>
-		<% @fields.each { |f| %>
+		<% @attributes.each { |f| %>
 		<p>
-			<label for="<%= f %>"><%= f %>:</label><br/>
-			<input type="text" name="<%= f %>" value="<?php echo isset($<%=@model.downcase%>)?$<%=@model.downcase%>-><%= f %>:''?>"/>
+			<label for="<%= f.name %>"><%= f.name %>:</label><br/>
+			<input type="text" name="<%= f.name %>" value="<?php echo isset($<%=@model.downcase%>)?$<%=@model.downcase%>-><%= f.name %>:''?>"/>
 		</p>
 		<% } %>
 		<input type="submit" value="Create"/>

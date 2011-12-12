@@ -1,18 +1,19 @@
 <?php
 
-class <%=@model.capitalize%>_model extends CI_Model {
+class Post_model extends CI_Model {
 
 	function save($data) {
-		<% @attributes.each { |f| %>
-		$this->db->set('<%= f.name %>', $data['<%= f.name %>']);<% } %>
+		
+		$this->db->set('nome', $data['nome']);
+		$this->db->set('sobrenome', $data['sobrenome']);
 
 		if($data['id'] == NULL) {
 			$this->db->set('created_at', date('Y-m-d h:i:s',time()));
-			$this->db->insert('<%=@model.downcase%>');
+			$this->db->insert('post');
 		} else {
 			$this->db->where('id', $data['id']);
 			$this->db->set('updated_at', date('Y-m-d h:i:s',time()));
-			$this->db->update('<%=@model.downcase%>');
+			$this->db->update('post');
 		}
 
 		return $this->db->affected_rows();
@@ -21,15 +22,15 @@ class <%=@model.capitalize%>_model extends CI_Model {
 	function find($id = NULL) {
 		if($id != NULL) {
 			$this->db->where('id', $id);
-			return $this->db->get('<%=@model.downcase%>')->row();
+			return $this->db->get('post')->row();
 		} else {
-			return $this->db->get('<%=@model.downcase%>')->result();
+			return $this->db->get('post')->result();
 		}
 	}
 
 	function destroy($id) {
 		$this->db->where('id', $id);
-		$this->db->delete('<%=@model.downcase%>');
+		$this->db->delete('post');
 
 		return $this->db->affected_rows();
 	}

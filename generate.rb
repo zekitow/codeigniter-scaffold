@@ -3,6 +3,7 @@
 require 'rubygems'
 require 'thor'
 require 'erb'
+require 'attribute'
 
 class Generate < Thor
 
@@ -10,6 +11,11 @@ class Generate < Thor
 
   desc      "scaffold", "scaffold *some-model*"
   def scaffold(model, *fields)
+
+		@attributes = Array.new
+		fields.each { |f|
+			@attributes.push(Attribute.new(f.split(":")[0], f.split(":")[1]))
+		}
 
 		@model = model
 		@fields = fields
@@ -22,7 +28,17 @@ class Generate < Thor
 		create "templates/view_index.php","application/views/#{@model.downcase}/index.php"
 	end
 
+	desc  "clean", "Clean the output folders"
+	def clean
+		FileUtils.rm Dir.glob('application/controllers/*')
+		FileUtils.rm Dir.glob('application/models/*')
+		FileUtils.rm_rf Dir.glob('application/views/*')
+		FileUtils.rm Dir.glob('application/migrations/*')
+
+	end
+
 	no_tasks {	
+
 		def create(template, output)
 			read(template)
 			parse_to(output)

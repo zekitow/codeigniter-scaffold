@@ -21,8 +21,8 @@ class <%=@model.capitalize%> extends CI_Controller {
 	function save() {
 		$data[] = array();
 		$data['id'] = $this->input->post('id', TRUE);
-		<% @fields.each { |f| %>
-		$data['<%= f %>'] = $this->input->post('<%= f %>', TRUE);<% } %>
+		<% @attributes.each { |f| %>
+		$data['<%= f.name %>'] = $this->input->post('<%= f.name %>', TRUE);<% } %>
 		$this-><%=@model.downcase%>_model->save($data);
 		redirect('/<%=@model.downcase%>/index', 'refresh');
 	}

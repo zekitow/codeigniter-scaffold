@@ -1,0 +1,8 @@
+CREATE TABLE `post` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(255) DEFAULT NULL, 
+  `sobrenome` VARCHAR(255) DEFAULT NULL, 
+  `created_at` DATETIME NOT NULL,
+  `updated_at` DATETIME DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);

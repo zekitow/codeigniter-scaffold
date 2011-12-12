@@ -1,9 +1,7 @@
-
-create table <%=@model.downcase%> (
-	id int not null auto_increment, 
-	primary key(id),<% @fields.each { |f| %>
-	<%= f %> VARCHAR(255), <% } %>
-	created_at datetime,
-	updated_at datetime
+CREATE TABLE `<%=@model.downcase%>` (
+  `id` INT NOT NULL AUTO_INCREMENT,<% @attributes.each { |f| %>
+  `<%= f.name %>` VARCHAR(255) DEFAULT NULL, <% } %>
+  `created_at` DATETIME NOT NULL,
+  `updated_at` DATETIME DEFAULT NULL,
+  PRIMARY KEY (`id`)
 );
-
