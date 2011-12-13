@@ -23,4 +23,10 @@ class Attribute
 		Attribute.new(f.split(":")[0], f.split(":")[1])
 	end
 
+	def mysql_type
+		unless @type == 'text'
+			return 'VARCHAR(255)'
+		end
+		'TEXT'
+	end
 end
