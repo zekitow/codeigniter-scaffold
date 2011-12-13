@@ -1,7 +1,7 @@
 CREATE TABLE `post` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(255) DEFAULT NULL, 
-  `body` VARCHAR(255) DEFAULT NULL, 
+  `body` TEXT DEFAULT NULL, 
   `created_at` DATETIME NOT NULL,
   `updated_at` DATETIME DEFAULT NULL,
   PRIMARY KEY (`id`)
