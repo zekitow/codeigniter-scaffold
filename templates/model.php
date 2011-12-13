@@ -1,7 +1,11 @@
 <?php
 
+/**
+ * <%=@model.capitalize%> Model.
+ */
 class <%=@model.capitalize%>_model extends CI_Model {
 
+	# save $data on '<%=@model.downcase%>'
 	function save($data) {
 		<% @attributes.each { |f| %>
 		$this->db->set('<%= f.name %>', $data['<%= f.name %>']);<% } %>
@@ -18,6 +22,7 @@ class <%=@model.capitalize%>_model extends CI_Model {
 		return $this->db->affected_rows();
 	}
 
+	# retrives $data from '<%=@model.downcase%>'
 	function find($id = NULL) {
 		if($id != NULL) {
 			$this->db->where('id', $id);
@@ -27,6 +32,7 @@ class <%=@model.capitalize%>_model extends CI_Model {
 		}
 	}
 
+	# destroy $data from  '<%=@model.downcase%>'
 	function destroy($id) {
 		$this->db->where('id', $id);
 		$this->db->delete('<%=@model.downcase%>');
