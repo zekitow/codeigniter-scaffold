@@ -1,6 +1,6 @@
 class Attribute
 
-	attr_accessor :name, :type
+  attr_accessor :name, :type
 
   def initialize(name, type)
     @name = name.downcase
@@ -19,14 +19,14 @@ class Attribute
     end
   end
 
-	def self.parse(f)
-		Attribute.new(f.split(":")[0], f.split(":")[1])
-	end
+  def self.parse(f)
+    Attribute.new(f.split(":")[0], f.split(":")[1])
+  end
 
-	def mysql_type
-		unless @type == 'text'
-			return 'VARCHAR(255)'
-		end
-		'TEXT'
-	end
+  def mysql_type
+    unless @type == 'text'
+      return 'VARCHAR(255)'
+    end
+    'TEXT'
+  end
 end
