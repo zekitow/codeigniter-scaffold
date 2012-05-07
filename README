@@ -7,7 +7,7 @@ codeigniter-scaffold
 		./generate.rb scaffold <model> field1:string field2:text ...
 
 		<model> is the table/model name for database
-		- Valid types.
+		- Valid types:
 			* string
 			* text
 	
