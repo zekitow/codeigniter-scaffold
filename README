@@ -4,10 +4,12 @@ codeigniter-scaffold
 
 	1. Usage:
 
-		./generate.rb scaffold <model> <field_1> <field_2> <field_3> ...
+		./generate.rb scaffold <model> field1:string field2:text ...
 
 		<model> is the table/model name for database
-		<field_*> the fields for the table
+		- Valid types.
+			* string
+			* text
 	
 	2. It will create some files at:
 
