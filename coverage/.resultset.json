@@ -1,29 +1,26 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/jribeiro/Projects/ci-scaffold/codeigniter-scaffold/lib/codeigniter-scaffold.rb": [
+      "/home/jribeiro/Projects/codeigniter-scaffold/lib/codeigniter_scaffold.rb": [
         1,
-        null,
-        null,
         1,
-        1
+        null
       ],
-      "/home/jribeiro/Projects/ci-scaffold/codeigniter-scaffold/lib/codeigniter_scaffold/command/help.rb": [
+      "/home/jribeiro/Projects/codeigniter-scaffold/lib/codeigniter_scaffold/command/help.rb": [
         1,
         1,
         1,
         null,
         1,
-        0,
-        0,
-        0,
+        1,
+        1,
         null,
         null,
         null,
         null,
         null
       ],
-      "/home/jribeiro/Projects/ci-scaffold/codeigniter-scaffold/lib/codeigniter_scaffold/executor.rb": [
+      "/home/jribeiro/Projects/codeigniter-scaffold/lib/codeigniter_scaffold/executor.rb": [
         1,
         1,
         null,
@@ -32,14 +29,32 @@
         1,
         null,
         null,
+        null,
+        null,
         1,
         null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/jribeiro/Projects/codeigniter-scaffold/spec/codeigniter_scaffold/executor_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        2,
+        null,
+        1,
+        null,
+        1,
+        1,
         null,
         null,
         null,
         null
       ]
     },
-    "timestamp": 1343837113
+    "timestamp": 1343842119
   }
 }
