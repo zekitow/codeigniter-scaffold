@@ -6,9 +6,11 @@ module CodeigniterScaffold
       COMMANDS.fetch(action, Command::Help)
     end
 
-    COMMANDS = {
-      "--help"   => Command::Help,
-      "-h"       => Command::Help
-    }
   end
+
+  COMMANDS = {
+    "--help"   => Command::Help,
+    "-h"       => Command::Help
+  }
+
 end

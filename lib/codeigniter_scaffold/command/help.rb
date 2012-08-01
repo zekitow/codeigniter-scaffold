@@ -3,9 +3,8 @@ module CodeigniterScaffold
     class Help
 
       def run(args)
-        Kernel.puts "Available runners for vraptor are: #{CodeigniterScaffold::COMMANDS.keys.join(', ')}"
-        Kernel.puts "Usage:"
-        Kernel.puts "  codeigniter-scaffold runner"
+        Kernel.print "Available runners for codeigniter  are: #{CodeigniterScaffold::COMMANDS.keys.join(', ')}"
+        Kernel.print "Usage:\r\n\tcodeigniter-scaffold runner"
       end
 
     end
