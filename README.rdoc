@@ -1,6 +1,12 @@
 = codeigniter-scaffold
 
-Description goes here.
+Simple scaffold generator for codeigniter 2.1.
+
+== Usage
+
+## Usage:
+
+TODO (init, scaffold)
 
 == Contributing to codeigniter-scaffold
  
