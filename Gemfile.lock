@@ -60,7 +60,6 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.5.3)
     simplecov-html (0.5.3)
-    thor (0.15.4)
 
 PLATFORMS
   ruby
@@ -76,4 +75,3 @@ DEPENDENCIES
   rubyzip
   shoulda
   simplecov
-  thor

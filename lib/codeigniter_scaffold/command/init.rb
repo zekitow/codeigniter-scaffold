@@ -3,7 +3,8 @@ module CodeigniterScaffold
     class Init
 
       def run(args)
-        unzip_file("ci/ci_2.1.2.zip", Dir.pwd)
+        ci_dir = File.dirname(__FILE__) + "/../../resources/ci_2.1.2.zip"
+        unzip_file(ci_dir, Dir.pwd)
       end
 
       def unzip_file(file, destination)

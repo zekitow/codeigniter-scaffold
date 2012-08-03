@@ -6,10 +6,12 @@ describe CodeigniterScaffold::Command::Help do
 
     subject { CodeigniterScaffold::Command::Help.new.run(nil) }
 
-    it "shows available runners help commands" do
-      Kernel.should_receive(:print).with("Available runners for codeigniter  are: #{CodeigniterScaffold::COMMANDS.keys.join(', ')}")
-      Kernel.should_receive(:print).with("Usage:\r\n\tcodeigniter-scaffold runner")
+    it "shows the usage" do
+      Kernel.should_receive(:puts).with("Usage: codeigniter-scaffold [options...]\r\n")
+      Kernel.should_receive(:puts).with("  -h, --help show this help\r\n")
+      Kernel.should_receive(:puts).with("  -i, --init unzip a codeigniter 2.1.2 installaion in the current dir\r\n")
       subject
     end
+
   end
 end

@@ -3,8 +3,9 @@ module CodeigniterScaffold
     class Help
 
       def run(args)
-        Kernel.print "Available runners for codeigniter  are: #{CodeigniterScaffold::COMMANDS.keys.join(', ')}"
-        Kernel.print "Usage:\r\n\tcodeigniter-scaffold runner"
+        Kernel.puts("Usage: codeigniter-scaffold [options...]\r\n")
+        Kernel.puts("  -h, --help show this help\r\n")
+        Kernel.puts("  -i, --init unzip a codeigniter 2.1.2 installaion in the current dir\r\n")
       end
 
     end
