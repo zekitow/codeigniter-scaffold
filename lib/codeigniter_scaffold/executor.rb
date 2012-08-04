@@ -8,10 +8,12 @@ module CodeigniterScaffold
   end
 
   COMMANDS = {
-    "--help"   => Command::Help,
-    "--init"   => Command::Init,
-    "-h"       => Command::Help,
-    "-i"       => Command::Init
+    "--help"     => Command::Help,
+    "--init"     => Command::Init,
+    "--scaffold" => Command::Scaffold,
+    "-h"         => Command::Help,
+    "-i"         => Command::Init,
+    "-s"         => Command::Scaffold
   }
 
 end
