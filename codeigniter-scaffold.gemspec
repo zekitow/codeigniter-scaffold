@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["jribeiro"]
-  s.date = "2012-08-04"
+  s.date = "2012-08-05"
   s.description = "longer description of your gem"
   s.email = "zekitow@gmail.com"
   s.executables = ["codeigniter-scaffold"]
@@ -31,8 +31,8 @@ Gem::Specification.new do |s|
     "codeigniter-scaffold.gemspec",
     "lib/codeigniter_scaffold.rb",
     "lib/codeigniter_scaffold/command/help.rb",
-    "lib/codeigniter_scaffold/command/scaffold.rb",
     "lib/codeigniter_scaffold/command/init.rb",
+    "lib/codeigniter_scaffold/command/scaffold.rb",
     "lib/codeigniter_scaffold/executor.rb",
     "lib/resources/ci_2.1.2.zip"
   ]
