@@ -2,6 +2,7 @@ module CodeigniterScaffold
 end
 
 require 'rubygems'
+require 'erb'
 require 'zip/zipfilesystem'
 
 require 'codeigniter_scaffold/command/init'
