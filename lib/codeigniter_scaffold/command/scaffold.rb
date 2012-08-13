@@ -2,7 +2,7 @@ module CodeigniterScaffold
   module Command
     class Scaffold
 
-      attr_accessor :model
+      attr_accessor :model, :attributes
 
       def run(args)
         return Kernel.puts("Some arguments are needed, please, try again.") if not valid?(args)
@@ -18,6 +18,9 @@ module CodeigniterScaffold
 
       def parse(args)
         @model = args.shift.capitalize
+        @attributes = Array.new
+        args.each {|a| @attributes << Attribute.new(a) }
+        @attributes
       end
     end
   end
