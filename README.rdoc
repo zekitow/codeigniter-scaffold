@@ -4,9 +4,10 @@ Simple scaffold generator for codeigniter 2.1.
 
 == Usage
 
-## Usage:
-
-TODO (init, scaffold)
+codeigniter-scaffold [options...]
+  -h, --help show this help
+  -i, --init unzip a codeigniter 2.1.2 installaion in the current dir
+  -s, --scaffold <model-name> field1:string, field2:text field3:integer, and so on..
 
 == Contributing to codeigniter-scaffold
  
