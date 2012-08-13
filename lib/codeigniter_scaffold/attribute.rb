@@ -6,7 +6,7 @@ module CodeigniterScaffold
     def initialize(argument)
       @name = argument.split(":")[0].downcase
       @type = argument.split(":")[1].downcase
-      @mysql_type = mysql_type
+      @mysql_type = find_mysql_type
       validate
     end
 
@@ -22,7 +22,7 @@ module CodeigniterScaffold
       end
     end
 
-    def mysql_type
+    def find_mysql_type
       return "VARCHAR(255)" if @type == 'string'
       return "INT" if @type == 'integer'
       "TEXT"

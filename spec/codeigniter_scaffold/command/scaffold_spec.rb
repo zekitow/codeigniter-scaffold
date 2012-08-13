@@ -2,7 +2,16 @@ require "spec_helper"
 
 describe CodeigniterScaffold::Command::Scaffold do
 
-  before { Kernel.stub(:exit) }
+  before do
+    CodeigniterScaffold::Command::Init.new.run(args)
+    Kernel.stub(:exit)
+  end
+
+  after(:all) do
+    unziped = ["application","index.php","system","user_guide"]
+    unziped.each { |f| FileUtils.rm_rf Dir.glob(f) }
+  end
+
   let(:scaffolder) { CodeigniterScaffold::Command::Scaffold.new }
 
   context "#run" do
@@ -102,6 +111,18 @@ describe CodeigniterScaffold::Command::Scaffold do
               its(:name)       { should == "name" }
               its(:type)       { should == "integer" }
               its(:mysql_type) { should == "INT" }
+            end
+
+            context "creating files" do
+              let(:args) { ["user","name:integer"] }
+
+              subject { scaffolder.run(args) }
+
+              it { File.should be_file(File.join(Dir.pwd,"/application/controllers/user.php")) }
+              it { File.should be_file(File.join(Dir.pwd,"/application/models/user_model.php")) }
+              it { File.should be_file(File.join(Dir.pwd,"/application/migrations/create_user.sql")) }
+              it { File.should be_file(File.join(Dir.pwd,"/application/views/user/create.php")) }
+              it { File.should be_file(File.join(Dir.pwd,"/application/views/user/index.php")) }
             end
           end
         end
