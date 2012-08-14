@@ -9,6 +9,15 @@ Simple scaffold generator for codeigniter 2.1.
     -i, --init unzip a codeigniter 2.1.2 installaion in the current dir
     -s, --scaffold <model-name> field1:string, field2:text field3:integer, and so on..
 
+== Pre-setup
+
+1. After running 'codeigniter-scaffold --init':
+  * Open 'application/config/config.php' and set-up the 'base_url' property;
+  * Open 'application/config/database.php' and set-up your database settings;
+2. After running 'codeigniter-scaffold --scaffold [options...]'
+  * Go to 'application/migrations' and run the generated script into your database;
+3. Have fun =)
+
 == Contributing to codeigniter-scaffold
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
