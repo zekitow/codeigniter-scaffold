@@ -4,16 +4,23 @@ module CodeigniterScaffold
 
       attr_accessor :model, :attributes
 
-      def run(args)
-        return Kernel.puts("Some arguments are needed, please, try again.") if not valid?(args)
-        parse(args)
+      ARGS_ARE_NEEDED = "Some arguments are needed, please, try again."
+      ARGS_WRONG      = "Something goes wrong! Aborting."
 
-        create("controller.php","application/controllers/#{@model.downcase}.php")
-        create("model.php","application/models/#{@model.downcase}_model.php")
-        create("migration.sql","application/migrations/create_#{@model.downcase}.sql")
-        mkdir ("application/views/#{@model.downcase}")
-        create("view_create.php","application/views/#{@model.downcase}/create.php")
-        create("view_index.php","application/views/#{@model.downcase}/index.php")
+      def run(args)
+        begin
+          return Kernel.puts(ARGS_ARE_NEEDED) unless valid?(args)
+          parse(args)
+
+          create("controller.php","application/controllers/#{@model.downcase}.php")
+          create("model.php","application/models/#{@model.downcase}_model.php")
+          create("migration.sql","application/migrations/create_#{@model.downcase}.sql")
+          mkdir ("application/views/#{@model.downcase}")
+          create("view_create.php","application/views/#{@model.downcase}/create.php")
+          create("view_index.php","application/views/#{@model.downcase}/index.php")
+        rescue
+          return Kernel.puts(ARGS_WRONG)
+        end
       end
 
       protected

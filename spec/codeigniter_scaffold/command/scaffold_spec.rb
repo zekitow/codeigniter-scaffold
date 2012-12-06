@@ -49,17 +49,35 @@ describe CodeigniterScaffold::Command::Scaffold do
           end
 
           context "with invalid attributes" do
-            let(:args) { ["user","name:varchar2"] }
+            context "and command pattern was not respected" do
+              let(:args) { ["user","name"] }
+              let(:error_message) { "Something goes wrong! Aborting." }
 
-            subject do
-              scaffolder.run(args)
-              scaffolder.attributes.first
+              subject do
+                scaffolder.run(args)
+                scaffolder.attributes.first
+              end
+
+              it "shows generic error" do
+                Kernel.should_receive(:puts).with(error_message)
+                subject
+              end
             end
 
-            it "validates field type" do
-              Kernel.should_receive(:exit)
-              subject
+            context "and an unexpected type is sent" do
+              let(:args) { ["user","name:varchar2"] }
+
+              subject do
+                scaffolder.run(args)
+                scaffolder.attributes.first
+              end
+
+              it "validates field type" do
+                Kernel.should_receive(:exit)
+                subject
+              end
             end
+
           end
         end
 
