@@ -18,6 +18,10 @@ Simple scaffold generator for codeigniter 2.1.
   * Go to 'application/migrations' and run the generated script into your database;
 3. Have fun =)
 
+== Video Tutorial
+
+Check out the video that show how to use codeigniter-scaffold at {youtube.com}[https://www.youtube.com/watch?v=2Djlz7nP1ks].
+
 == Contributing to codeigniter-scaffold
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
