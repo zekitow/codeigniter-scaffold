@@ -7,4 +7,4 @@ bundler_args: "--without development"
 before_install:
   - gem install bundler --pre
 before_script:
-script: true
+script: "bundle exec rspec"
