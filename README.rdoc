@@ -1,6 +1,8 @@
 = codeigniter-scaffold
 
-Simple scaffold generator for codeigniter 2.1.
+{<img src="https://travis-ci.org/zekitow/codeigniter-scaffold.png" alt="Build Status" />}[https://travis-ci.org/zekitow/codeigniter-scaffold]
+
+Simple scaffold generator for codeigniter 2.1. 
 
 == Usage
 
