@@ -1,28 +1,32 @@
-# codeigniter-scaffold {<img src="https://travis-ci.org/zekitow/codeigniter-scaffold.png" alt="Build Status" />}[https://travis-ci.org/zekitow/codeigniter-scaffold]
+# codeigniter-scaffold 
 
-Simple scaffold generator for codeigniter 2.1. 
+Simple scaffold generator for codeigniter 2.1 now using Twitter Bootstrap templates!
 
 ## Usage
 
-  codeigniter-scaffold [options...]
-    -h, --help show this help
-    -i, --init unzip a codeigniter 2.1.2 installaion in the current dir
-    -s, --scaffold <model-name> field1:string, field2:text field3:integer, and so on..
+    codeigniter-scaffold [options...]
+      -h, --help show this help
+      -i, --init unzip a codeigniter 2.1.2 installaion in the current dir
+      -s, --scaffold <model-name> field1:string, field2:text field3:integer, and so on..
+
 
 ## Pre-setup
 
 * After running 'codeigniter-scaffold --init':
-  - Open 'application/config/config.php' and set-up the 'base_url' property;
-  - Open 'application/config/database.php' and set-up your database settings;
-  
+  * Open 'application/config/config.php' and set-up the 'base_url' property;
+  * Open 'application/config/database.php' and set-up your database settings;
+
+
+ 
 * After running 'codeigniter-scaffold --scaffold [options...]'
-  - Go to 'application/migrations' and run the generated script into your database;
+  * Go to 'application/migrations' and run the generated script into your database;
+
   
 * Have fun =)
 
 ## Video Tutorial
 
-Check out the video that show how to use codeigniter-scaffold at {youtube.com}[https://www.youtube.com/watch?v=2Djlz7nP1ks].
+Check out the video that show how to use codeigniter-scaffold at [youtube.com](https://www.youtube.com/watch?v=2Djlz7nP1ks).
 
 ## Generated Resources
 
@@ -44,4 +48,3 @@ Check out the video that show how to use codeigniter-scaffold at {youtube.com}[h
 
 Copyright (c) 2012 jribeiro. See LICENSE.txt for
 further details.
-
