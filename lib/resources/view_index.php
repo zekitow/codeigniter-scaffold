@@ -1,20 +1,17 @@
-	<h1><%=@model.capitalize%></h1>
-	<table>
+	<h2><%=@model.capitalize%></h2>
+	<table class="table">
 		<tr>
-			<th>Id</th>
-			<% @attributes.each { | f | %>
-			<th><%= f.name %></th><% } %>
+			<th>#</th><% @attributes.each { | f | %>
+			<th><%= f.name.capitalize %></th><% } %>
+			<th colspan="2"></th>
 		</tr>
-		<?php	foreach ($<%=@model.downcase%> as $object) { ?>
-			<tr>
-			<td><?php echo $object->id ?></td>
-			<% @attributes.each { | f | %>
-			<td><?php echo $object-><%= f.name %> ?></td><% } %>
-			<td><?php echo anchor('/<%=@model.downcase%>/edit/'.$object->id, 'Edit'); ?></td>
-			<td><?php echo anchor('/<%=@model.downcase%>/destroy/'.$object->id, 'Destroy'); ?></td>
-			
-			</tr>
-		<?php } ?>
+		<?php foreach ($<%=@model.downcase%> as $object) { ?>
+		<tr>
+			<td><?=$object->id ?></td><% @attributes.each { | f | %>
+			<td><?= $object-><%= f.name %> ?></td><% } %>
+			<td width="80"><?= anchor('/<%=@model.downcase%>/edit/'.$object->id, 'Edit','class="btn btn-warning"'); ?></td>
+			<td width="80"><?= anchor('/<%=@model.downcase%>/destroy/'.$object->id, 'Destroy','class="btn btn-danger"'); ?></td>
+		</tr><?php } ?>
 	</table>
 	
-	<?php echo anchor('/<%=@model.downcase%>/create','Create'); ?>
+	<?= anchor('/<%=@model.downcase%>/create','Create','class="btn btn-primary"'); ?>

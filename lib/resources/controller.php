@@ -7,27 +7,28 @@ class <%=@model.capitalize%> extends CI_Controller {
 
 	function __construct() { 
 		parent::__construct();
-		$this->load->helper(array('form','file','url'));		
-		$this->load->library('form_validation');
 		$this->load->model('<%=@model.downcase%>_model');
 	}
 
 	# GET /<%=@model.downcase%>
 	function index() {
 		$data['<%=@model.downcase%>'] = $this-><%=@model.downcase%>_model->find();
-		$this->load->view('/<%=@model.downcase%>/index', $data);
+		$data['content'] = '/<%=@model.downcase%>/index';
+		$this->load->view('/includes/template', $data);
 	}
 
 	# GET /<%=@model.downcase%>/create
 	function create() {
-		$this->load->view('/<%=@model.downcase%>/create');
+		$data['content'] = '/<%=@model.downcase%>/create';
+		$this->load->view('/includes/template', $data);
 	}
 
 	# GET /<%=@model.downcase%>/edit/1
 	function edit() {
 		$id = $this->uri->segment(3);
 		$data['<%=@model.downcase%>'] = $this-><%=@model.downcase%>_model->find($id);
-		$this->load->view('/<%=@model.downcase%>/create', $data);
+		$data['content'] = '/<%=@model.downcase%>/create';
+		$this->load->view('/includes/template', $data);
 	}
 
 	# GET /<%=@model.downcase%>/destroy/1
@@ -51,7 +52,8 @@ class <%=@model.capitalize%> extends CI_Controller {
 			redirect('/<%=@model.downcase%>/index', 'refresh');
 		}
 		$data['<%=@model.downcase%>'] =	$this->rebuild();
-		$this->load->view('/<%=@model.downcase%>/create',$data);
+		$data['content'] = '/<%=@model.downcase%>/create';
+		$this->load->view('/includes/template', $data);
 	}
 
 	function rebuild() {
