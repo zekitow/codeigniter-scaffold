@@ -1,15 +1,15 @@
-= codeigniter-scaffold {<img src="https://travis-ci.org/zekitow/codeigniter-scaffold.png" alt="Build Status" />}[https://travis-ci.org/zekitow/codeigniter-scaffold]
+# codeigniter-scaffold {<img src="https://travis-ci.org/zekitow/codeigniter-scaffold.png" alt="Build Status" />}[https://travis-ci.org/zekitow/codeigniter-scaffold]
 
 Simple scaffold generator for codeigniter 2.1. 
 
-== Usage
+## Usage
 
   codeigniter-scaffold [options...]
     -h, --help show this help
     -i, --init unzip a codeigniter 2.1.2 installaion in the current dir
     -s, --scaffold <model-name> field1:string, field2:text field3:integer, and so on..
 
-== Pre-setup
+## Pre-setup
 
 * After running 'codeigniter-scaffold --init':
   - Open 'application/config/config.php' and set-up the 'base_url' property;
@@ -20,17 +20,17 @@ Simple scaffold generator for codeigniter 2.1.
   
 * Have fun =)
 
-== Video Tutorial
+## Video Tutorial
 
 Check out the video that show how to use codeigniter-scaffold at {youtube.com}[https://www.youtube.com/watch?v=2Djlz7nP1ks].
 
-== Generated Resources
+## Generated Resources
 
 ![ScreenShot](https://raw.github.com/zekitow/codeigniter-scaffold/master/ss/list.png)
 ![ScreenShot](https://raw.github.com/zekitow/codeigniter-scaffold/master/ss/create.png)
 
 
-== Contributing to codeigniter-scaffold
+## Contributing to codeigniter-scaffold
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
@@ -40,7 +40,7 @@ Check out the video that show how to use codeigniter-scaffold at {youtube.com}[h
 * Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
-== Copyright
+## Copyright
 
 Copyright (c) 2012 jribeiro. See LICENSE.txt for
 further details.
