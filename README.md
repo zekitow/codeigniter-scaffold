@@ -28,6 +28,9 @@ Simple scaffold generator for codeigniter 2.1 now using Twitter Bootstrap templa
 
 Check out the video that show how to use codeigniter-scaffold at [youtube.com](https://www.youtube.com/watch?v=2Djlz7nP1ks).
 
+Você também pode ver o vídeo em Portugues - Brasil (updated version UI) [youtube.com with Twitter Bootstrap](http://www.youtube.com/watch?v=nofk3_W71Qg).
+
+
 ## Generated Resources
 
 ![ScreenShot](https://raw.github.com/zekitow/codeigniter-scaffold/master/ss/list.png)
