@@ -1,10 +1,6 @@
-# let's see if comments work
-
 language: ruby
 rvm:
-  - 1.9.3
-bundler_args: "--without development"
+- 1.9.3
+script: bundle exec rspec spec
 before_install:
-  - gem install bundler --pre
-before_script:
-script: "bundle exec rspec"
+- "echo 'gem: --no-ri --no-rdoc' > ~/.gemrc"
