@@ -1,4 +1,4 @@
-# codeigniter-scaffold {<img src="https://travis-ci.org/zekitow/codeigniter-scaffold.png" alt="Build Status" />}[https://travis-ci.org/zekitow/codeigniter-scaffold]
+# codeigniter-scaffold <img src="https://travis-ci.org/zekitow/codeigniter-scaffold.png" alt="Build Status" />
 
 Simple scaffold generator for codeigniter 2.1 now using Twitter Bootstrap templates!
 
